@@ -1,0 +1,23 @@
+{
+  "name": "api_contas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdilsonRohden/app_contas.git"
+  },
+  "author": "EdilsonRohden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdilsonRohden/app_contas/issues"
+  },
+  "homepage": "https://github.com/EdilsonRohden/app_contas#readme",
+  "dependencies": {
+    "consign": "^0.1.6",
+    "express": "^4.16.4"
+  }
+}
