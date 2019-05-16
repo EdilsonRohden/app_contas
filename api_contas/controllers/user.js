@@ -1,6 +1,15 @@
-const User = require('../models/user.js').default;
+const User = require('../models/User.js')();
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const autHash = require('../config/auth.json');
 
 module.exports = (app) => {
+
+    function generateToken( params ){
+        return jwt.sign({ params }, autHash.secret, {
+            expiresIn: 86400
+        });
+    }
     
     app.get('/user', (req, res) => {
         
@@ -12,11 +21,9 @@ module.exports = (app) => {
 
     app.post('/users/user', async (req, res) => {
         
-        const { email } = req.body;
-
+        const { login } = req.body;
         try{
-            
-            if ( await User.findOne({ email })){
+            if ( await User.findOne({ login })){
                 return res.status(400).send({ error: 'user already exists' });
             }
 
@@ -24,9 +31,35 @@ module.exports = (app) => {
 
             user.password = undefined;
 
-            res.send({ user });
+            res.send({ 
+                user,
+                token: generateToken( { id: user.id } ),
+            });
         }catch (error){
+            console.log(error);
             res.status(400).send({ error: 'Registration failed' });
         }
+    });
+
+    app.post('/users/authenticate', async (req, res) => {
+        const { login, password } = req.body;
+
+        const user = await User.findOne({ login }).select('+password');
+
+        if (!user){
+            return res.status(400).send({ error: "User not found" });
+        }
+
+        if (!await bcrypt.compare(password, user.password)){
+            return res.status(400).send({ error: "Invalid password." });
+        }
+
+        user.password = undefined;
+
+        res.send({ 
+            user,
+            token: generateToken( { id: user.id } ),
+        });
+
     });
 }
