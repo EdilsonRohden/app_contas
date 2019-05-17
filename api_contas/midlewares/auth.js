@@ -22,7 +22,7 @@ module.exports = (req, res, next) => {
 
     jwt.verify(token, autHash.secret, (err, decoded) => {
         if (err){
-            return res.status(401).send({ error: err })
+            return res.status(401).send({ error: 'Invalid token' })
         }
 
         req.userId = decoded.id;

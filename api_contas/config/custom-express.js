@@ -1,5 +1,4 @@
 var express = require('express');
-var consign = require('consign');
 var bodyParser = require('body-parser');
 
 
@@ -9,9 +8,8 @@ module.exports = () => {
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
 
-    consign()
-    .include('./controllers')
-    .into(app);    
+    require('../controllers/user')(app);
+    require('../controllers/acount')(app);
 
     return app;
 };
