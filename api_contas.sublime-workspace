@@ -1,0 +1,466 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"acount",
+				"acountId"
+			],
+			[
+				"auth",
+				"authMidlleware"
+			],
+			[
+				"aut",
+				"authMidlleware"
+			],
+			[
+				"mo",
+				"mongoose"
+			],
+			[
+				"ma",
+				"math.h\tstandard header"
+			],
+			[
+				"ta",
+				"taxaDeJuros"
+			],
+			[
+				"std",
+				"stdio.h\tstandard header"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "api_contas/midlewares/auth.js",
+			"settings":
+			{
+				"buffer_size": 790,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "api_contas/models/User.js",
+			"settings":
+			{
+				"buffer_size": 789,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "api_contas/models/Acount.js",
+			"settings":
+			{
+				"buffer_size": 533,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "api_contas/models/Mov.js",
+			"settings":
+			{
+				"buffer_size": 568,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "api_contas/controllers/user.js",
+			"settings":
+			{
+				"buffer_size": 1514,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "api_contas/controllers/acount.js",
+			"settings":
+			{
+				"buffer_size": 1541,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"che",
+				"UI: Select Color Scheme"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			],
+			[
+				"toolbar",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"toll",
+				"View: Toggle Open Files in Side Bar"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/config",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/controllers",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/db",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/midlewares",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/models"
+	],
+	"file_history":
+	[
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/config/custom-express.js",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/controllers/movimentos.js",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/package.json",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/midlewares/auth.js",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/models/Acount.js",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/models/Mov.js",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/controllers/acount.js",
+		"/home/edilson/Dropbox/Arquivos_Profissional/Compasso/app_contas/api_contas/index.js",
+		"/home/edilson/Documents/Dropbox/Arquivos_Profissional/Maratona_Programacao_2019/UriPython3/Unoesc_04_05/G.py",
+		"/home/edilson/Documents/Dropbox/Arquivos_Profissional/Maratona_Programacao_2019/UriPython3/Unoesc_04_05/D.py",
+		"/home/edilson/Documents/Dropbox/Arquivos_Profissional/Maratona_Programacao_2019/UriPython3/Unoesc_04_05/F.py",
+		"/home/edilson/Documents/FExponencial.c"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "api_contas/midlewares/auth.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 790,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								790,
+								790
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "api_contas/models/User.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								247,
+								247
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "api_contas/models/Acount.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 533,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								533,
+								533
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "api_contas/models/Mov.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 568,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								391,
+								391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "api_contas/controllers/user.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1514,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								949,
+								949
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "api_contas/controllers/acount.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								455,
+								455
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "api_contas.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
