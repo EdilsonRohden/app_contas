@@ -3,6 +3,8 @@ const autHash = require('../config/auth.json');
 
 module.exports = (req, res, next) => {
     const headers = req.headers.authorization;
+    
+    res.header("Access-Control-Allow-Origin", "*");
 
     if (!headers){
         return res.status(401).send({ error: 'No token detected' });

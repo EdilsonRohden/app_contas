@@ -13,6 +13,8 @@ function generateToken( params ){
 }
 //Cria um novo user
 router.post('/user', async (req, res) => {
+
+    res.header("Access-Control-Allow-Origin", "*");
     
     const { login } = req.body;
     try{
@@ -35,6 +37,9 @@ router.post('/user', async (req, res) => {
 });
 //Autenticação de usuario
 router.post('/authenticate', async (req, res) => {
+
+    res.header("Access-Control-Allow-Origin", "*");
+
     const { login, password } = req.body;
 
     const user = await User.findOne({ login }).select('+password');
