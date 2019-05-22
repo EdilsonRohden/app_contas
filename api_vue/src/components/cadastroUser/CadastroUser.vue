@@ -3,7 +3,7 @@
         <form @submit.prevent="cadastrar()">
             <div>
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="name" @input="user.name = $event.target.value" :value="user.name"/>
+                <input type="text" name="nome" id="nome" @input="user.nome = $event.target.value" :value="user.nome"/>
             </div>
             <div>
                 <label for="login">Login:</label>
@@ -26,7 +26,7 @@ export default {
         return{
 
             user:{
-                name: '',
+                nome: '',
                 login: '',
                 password: ''
             }
@@ -35,11 +35,11 @@ export default {
 
     methods:{
         cadastrar(){
-            this.$http.post('http://localhost:3000/users/user', this.user)
-                .then(res => console.log(res), err => console.log(err));
+            this.$http.post('users/user', this.user)
+                .then(res => console.log(res), err => err.json().then(data => console.log(data)));
 
             this.user = {
-                name: '',
+                nome: '',
                 login: '',
                 password: ''
             }

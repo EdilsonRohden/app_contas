@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 
 module.exports = () => {
@@ -7,6 +8,7 @@ module.exports = () => {
 
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
+    app.use(cors());
 
     require('../controllers/user')(app);
     require('../controllers/acount')(app);
