@@ -7,6 +7,20 @@ const router = express.Router();
 
 router.use(authMidlleware);
 
+//Listar todas as contas
+router.get('/', async (req, res) => {
+	
+	try {
+
+		const acounts = await Acount.find().populate(['user', 'moves']);
+
+		return res.send({ acounts });
+
+	} catch (err){
+		res.status(400).send({ error: 'Error loading acounts' });
+	}
+
+});
 //Criar uma nova conta
 router.post('/acount', async (req, res) => {
 	try{
@@ -32,20 +46,6 @@ router.post('/acount', async (req, res) => {
 		res.status(400).send({ error: "Erro ao criar conta" })
 	}
     
-});
-//Listar todas as contas
-router.get('/', async (req, res) => {
-	
-	try {
-
-		const acounts = await Acount.find().populate(['user', 'moves']);
-
-		return res.send({ acounts });
-
-	} catch (err){
-		res.status(400).send({ error: 'Error loading acounts' });
-	}
-
 });
 //lista conta especifica
 router.get('/:acountId', async (req, res) => {
@@ -105,8 +105,6 @@ router.delete('/:acountId', async (req, res) => {
 	}
 
 });
-
-
 
 
 module.exports = app => app.use('/acounts', router);

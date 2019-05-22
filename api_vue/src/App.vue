@@ -12,8 +12,8 @@
 
 <script>
 
-import Menu from './components/shared/Menu';
-import Footer from './components/shared/Footer'
+import Menu from './components/shared/menu/Menu';
+import Footer from './components/shared/footer/Footer'
 
 import { routes } from "./routes";
 
