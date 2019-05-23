@@ -14,7 +14,7 @@
                 <input type="password" name="password" id="password" v-model="user.password"/>
             </div>
 
-            <button @click="cadastrar()" >Salvar</button>
+            <button>Salvar</button>
         </form>
 
     </div>
@@ -36,7 +36,7 @@ export default {
     methods:{
         cadastrar(){
             this.$http.post('users/user', this.user)
-                .then(function(res){
+                .then(res => {
                   res.json().then(data => {
                     data.token = "Bearer ".concat(data.token);
                     localStorage.setItem('token', data.token);

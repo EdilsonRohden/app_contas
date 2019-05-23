@@ -10,7 +10,7 @@ const MovSchema = new mongoose.Schema({
         required: true
     },
     value: {
-        type: String,
+        type: Number,
         require: true,
     },
     acount:{

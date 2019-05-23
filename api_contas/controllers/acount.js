@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 	try {
 
 		const acounts = await Acount.find().populate(['user', 'moves']);
-
+		
 		return res.send({ acounts });
 
 	} catch (err){
