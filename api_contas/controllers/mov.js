@@ -12,15 +12,19 @@ router.post('/mov', async (req, res) =>{
     try{
 
         const { acount, description, value, tipo } = req.body;
-    
-        const acount = await Acount.find({ acount });
+        console.log(acount);
+        acountFinded = await Acount.findOne({ _id : acount._id });
+        console.log(acountFinded);
         const mov = await Mov.create({ description, tipo, value, acount });
-        await acount.move.push(mov);
-        await acount.save();
+        await acountFinded.moves.push(mov);
+        await acountFinded.save();
     
-        res.send({ acount });
+        res.send({ acountFinded });
     }catch (err){
         res.status(400).send({ error: 'Failed to add mov' });
+        console.log(err);
     }
 
 });
+
+module.exports = app => app.use('/moves', router);

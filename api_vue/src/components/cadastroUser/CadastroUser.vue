@@ -3,15 +3,15 @@
         <form @submit.prevent="cadastrar()">
             <div>
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" @input="user.nome = $event.target.value" :value="user.nome"/>
+                <input type="text" name="nome" id="nome" v-model="user.nome"/>
             </div>
             <div>
                 <label for="login">Login:</label>
-                <input type="text" name="login" id="login" @input="user.login = $event.target.value" :value="user.login"/>
+                <input type="text" name="login" id="login" v-model="user.login"/>
             </div>
             <div>
                 <label for="password">Senha:</label>
-                <input type="text" name="password" id="password" @input="user.password = $event.target.value" :value="user.password"/>
+                <input type="password" name="password" id="password" v-model="user.password"/>
             </div>
 
             <button @click="cadastrar()" >Salvar</button>
@@ -21,7 +21,7 @@
 </template>
 <script>
 export default {
-    
+
     data(){
         return{
 
@@ -36,7 +36,14 @@ export default {
     methods:{
         cadastrar(){
             this.$http.post('users/user', this.user)
-                .then(res => console.log(res), err => err.json().then(data => console.log(data)));
+                .then(function(res){
+                  res.json().then(data => {
+                    data.token = "Bearer ".concat(data.token);
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('user_data', JSON.stringify(data.user));
+                  });
+                  },err => err.json().then(data => console.log(data))
+                );
 
             this.user = {
                 nome: '',
@@ -50,5 +57,5 @@ export default {
 </script>
 
 <style scoped>
-    
+
 </style>

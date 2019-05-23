@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    
+
     <meu-menu :routes="routes" />
 
-    <router-view></router-view>    
+    <router-view></router-view>
 
     <meu-footer />
 
@@ -21,8 +21,11 @@ export default {
 
   data(){
     return{
-      routes 
-    }
+
+      routes,
+
+  }
+
   },
 
   components: {

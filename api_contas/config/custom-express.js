@@ -12,6 +12,7 @@ module.exports = () => {
 
     require('../controllers/user')(app);
     require('../controllers/acount')(app);
+    require('../controllers/mov')(app);
 
     return app;
 };
