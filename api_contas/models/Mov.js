@@ -5,9 +5,9 @@ const MovSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    type: {
+    tipo: {
         type: String,
-        required: true,
+        required: true
     },
     value: {
         type: String,

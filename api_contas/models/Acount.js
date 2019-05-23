@@ -11,14 +11,14 @@ const AcountSchema = new mongoose.Schema({
     	ref: 'User',
     	require: true,
     },
-    moves: [{
-    	type: mongoose.Schema.Types.ObjectId,
-    	ref: 'Mov',
-    }],
     createdAt: {
         type: Date,
         default: Date.now,
-    }
+    },
+    moves: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Mov',
+    }]
     
 });
 
