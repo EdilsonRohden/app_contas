@@ -19,20 +19,22 @@ export default {
                 totalSaldo: 0
             },
             token: '',
-            acounts: []
         }
     },
 
     created() {
-    
-        this.token = localStorage.getItem('token');
-        this.$http.get('acounts/', { headers: { 'Authorization': this.token } })
-        .then(
-            function(res){
-                this.calculaTodos(res.body.acounts);
-            },
-            function(err){ console.log(err) }
-        );
+        if (false){
+            return;
+        }else{
+            this.token = localStorage.getItem('token');
+            this.$http.get('acounts/', { headers: { 'Authorization': this.token } })
+            .then(
+                function(res){
+                    this.calculaTodos(res.body.acounts);
+                },
+                function(err){ console.log(err) }
+            );
+        }
     },
 
     methods: {

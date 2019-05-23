@@ -14,7 +14,7 @@
             </tr>
         </table>
 
-        <total-conta :acount="conta"/>
+        <total-conta :acount="conta" />
 
     </div>
 </template>

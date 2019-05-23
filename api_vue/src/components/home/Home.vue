@@ -7,7 +7,7 @@
                 <p>{{ acount.description }}</p>
               </router-link>
               <mov-conta :conta="acount"/>
-              <p>{{ acount.createdAt }}</p>
+              <p>Data de criação: {{ acount.createdAt }}</p>
             </div>
         </div>
       </ul>
