@@ -51,8 +51,8 @@ router.post('/acount', async (req, res) => {
 router.get('/:acountId', async (req, res) => {
 
 	try{
-
-		const acount = await Acount.find({ ...req.acountId }).populate(['user', 'moves']);
+		const id = req.params.acountId;
+		const acount = await Acount.find({ _id: id }).populate(['user', 'moves']);
 
 		return res.send({ acount });
 

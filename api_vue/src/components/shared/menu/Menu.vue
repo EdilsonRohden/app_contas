@@ -1,18 +1,19 @@
 <template>
-    <div>
-        <nav>
-            <ul>
-                <li v-for="route of routes" :key="route.titulo">
-                    <router-link v-show="route.menu" :to="route.path">{{ route.titulo }}</router-link>
-                </li>
-            </ul>
-        </nav>
+    <div class="lista">
+
     </div>
 </template>
 
 <script>
 export default {
-
+    data(){
+        return{
+            token: ''
+        }
+    },
+    updated() {
+        this.token = localStorage.getItem('token');
+    },
     props: {
 
         routes:{
@@ -28,5 +29,16 @@ export default {
 </script>
 
 <style scoped>
-
+    .lista{
+        list-style: none;
+        background-color: #24292e;
+        width: 100%;
+        height: 40px;
+        margin-right: 20px;
+    }
+    .lista-item{
+        display: inline-block;
+        margin: 10px;
+        
+    }
 </style>

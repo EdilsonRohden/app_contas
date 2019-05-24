@@ -2,6 +2,9 @@
     <div>
 
         <table v-for="conta in acounts" :key="conta._id">
+            <thead>
+                <tr>Descrição da Conta: {{ conta.description }}</tr>
+            </thead>
             <tr>
                 <th>Descriçao</th>
                 <th>Tipo</th>

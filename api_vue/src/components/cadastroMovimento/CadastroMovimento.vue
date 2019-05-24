@@ -59,7 +59,7 @@ export default {
           this.$http.post('moves/mov', { acount, description, value, tipo }, { headers: { 'Authorization': this.token } })
             .then(
               function(res){
-                res.json().then(data => console.log(data));
+                return this.$router.push('/home');
               },function(err){
                 console.log(err);
               }

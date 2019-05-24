@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <form @submit.prevent="authenticate()">
 
             <div>
@@ -16,6 +16,9 @@
             <div>
                 <router-link to='/CadastroUser'>Criar conta</router-link>
             </div>
+            <div class="erro">
+                <p :v-show="erro" >{{ erro }}</p>
+            </div>
     </div>
 </template>
 
@@ -28,7 +31,8 @@ export default {
                 nome: '',
                 login: '',
                 password: ''
-            }
+            },
+            erro: ''
         }
     },
 
@@ -43,9 +47,13 @@ export default {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('user_data', JSON.stringify(data.user));
                   });
+                  return this.$router.push('/home');
                 },
                 function(err){
-                  err.json().then(data => console.log(data))
+                  err.json().then(data => { 
+                      console.log(data);
+                      this.erro = data.error;
+                    });
                 });
 
         }
@@ -55,5 +63,9 @@ export default {
 </script>
 
 <style scoped>
+
+    .erro{
+        color: red;
+    }
 
 </style>

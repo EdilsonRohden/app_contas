@@ -40,8 +40,9 @@ export default {
                   res.json().then(data => {
                     data.token = "Bearer ".concat(data.token);
                     localStorage.setItem('token', data.token);
-                    localStorage.setItem('user_data', JSON.stringify(data.user));
+                    localStorage.setItem('user_data', JSON.stringify(data.user)); 
                   });
+                  return this.$router.push('/home');
                   },err => err.json().then(data => console.log(data))
                 );
 

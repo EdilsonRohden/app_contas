@@ -12,10 +12,10 @@
         <td>{{ mov.value }}</td>
       </tr>
     </table>
-    <div v-show="!this.acount">
-      <p>Total Crédito: {{ acount.tc }}</p>
-      <p>Total Débito: {{ acount.td }}</p>
-      <p>Saldo: {{ acount.ts }}</p>
+    <div v-show="this.acount">
+      <p>Total Crédito: {{ result.tc }}</p>
+      <p>Total Débito: {{ result.td }}</p>
+      <p>Saldo: {{ result.ts }}</p>
     </div>
   </div>
 </template>
@@ -32,38 +32,43 @@ export default {
   data(){
     return{
       token: '',
-      acount: {}
+      acount: {},
+      acountArray: [],
+      result:{
+        td: 0,
+        tc: 0,
+        ts: 0
+      }
     }
   },
   created(){
     this.acount._id = this.id;
-    console.log(this.id);
     this.token = localStorage.getItem('token');
     this.recebeDados();
   },
   methods:{
     recebeDados(){
-      this.$http.get('acounts/' + this.acount._id, { headers: { 'Authorization': this.token } })
+      this.$http.get(('acounts/'  + this.acount._id), { headers: { 'Authorization': this.token } })
         .then(function(res){
-          this.acount = res.body.acount;
-          console.log(this.acount);
-          if( this.acount != null && this.acount != undefined){
-            this.calcula()
-          }
+          this.acountArray = res.body.acount;
+          this.calcula();
         },function(err){
           console.log(err);
         }
         );
     },
     calcula(){
-      this.acount.moves.forEach(mov => {
-        if (mov.tipo == 'D'){
-          this.acount.td = this.acount.td + parseInt(mov.value);
-        }else{
-          this.acount.tc = this.acount.tc + parseInt(mov.value);
-        }
+      this.acountArray.forEach(conta =>{
+        this.acount = conta;
+        this.acount.moves.forEach(mov => {
+          if (mov.tipo == 'D'){
+            this.result.td = this.result.td + parseInt(mov.value);
+          }else{
+            this.result.tc = this.result.tc + parseInt(mov.value);
+          }
+        });
+        this.result.ts = this.result.td - this.result.tc;
       });
-      this.acount.ts = this.acount.td - this.acount.tc;
     }
   }
 }
