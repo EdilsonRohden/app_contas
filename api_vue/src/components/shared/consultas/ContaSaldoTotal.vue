@@ -9,9 +9,7 @@
 <script>
 export default {
 
-    props: ['acount'],
-
-    data(){
+    data: function(){
         return {
             result: {
                 totalCredito: 0,
@@ -23,18 +21,14 @@ export default {
     },
 
     created() {
-        if (false){
-            return;
-        }else{
-            this.token = localStorage.getItem('token');
-            this.$http.get('acounts/', { headers: { 'Authorization': this.token } })
-            .then(
-                function(res){
-                    this.calculaTodos(res.body.acounts);
-                },
-                function(err){ console.log(err) }
-            );
-        }
+      this.token = localStorage.getItem('token');
+      this.$http.get('acounts/', { headers: { 'Authorization': this.token } })
+      .then(
+          function(res){
+              this.calculaTodos(res.body.acounts);
+          },
+          function(err){ console.log(err) }
+      );
     },
 
     methods: {
@@ -45,13 +39,13 @@ export default {
                 }else{
                     this.result.totalCredito = this.result.totalCredito + parseInt(mov.value);
                 }
-            });            
+            });
         },
         calculaTodos(acounts){
             acounts.forEach(acount => {
                 this.calcula(acount);
             });
-            this.result.totalSaldo = this.result.totalDebito - this.result.totalCredito; 
+            this.result.totalSaldo = this.result.totalDebito - this.result.totalCredito;
         }
     },
 
@@ -59,5 +53,5 @@ export default {
 </script>
 
 <style scoped>
-    
+
 </style>

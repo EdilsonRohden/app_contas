@@ -5,7 +5,7 @@
                 <th>Descrição da conta</th>
                 <th>Saldo</th>
             </tr>
-            <tr v-for="res in result">
+            <tr v-for="res in result" :key="res.description">
                 <td>{{ res.description }}</td>
                 <td>{{ res.value }}}</td>
             </tr>
@@ -16,12 +16,16 @@
 
 <script>
 export default {
-    
-    props:{
-        acounts: {
-            type: Array,
-            required: true
-        }
+
+
+    created(){
+      this.token = localStorage.getItem('token');
+      this.$http.get('acounts/', { headers: { 'Authorization': this.token } })
+        .then(
+          function(res){ this.acounts = res.body.acounts;
+          },
+          function(err){ console.log(err) }
+        );
     },
 
     data(){
@@ -51,5 +55,5 @@ export default {
 </script>
 
 <style scoped>
-    
+
 </style>

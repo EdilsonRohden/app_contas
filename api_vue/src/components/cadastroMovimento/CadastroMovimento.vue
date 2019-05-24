@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div>
+          <consulta-conta :id="this.$route.params.id" />
+        </div>
         <form @submit.prevent="">
             <div>
                 <label for="description">Descrição</label>
@@ -23,7 +26,13 @@
 </template>
 
 <script>
+import ConsultaConta from '../shared/consultas/ConsultaConta';
+
 export default {
+
+    components:{
+      'consulta-conta': ConsultaConta
+    },
 
     data(){
         return{

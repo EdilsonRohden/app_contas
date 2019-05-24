@@ -6,12 +6,11 @@
               <router-link :to="{ name: 'cadastroMovimento', params : { id: acount._id } }">
                 <p>{{ acount.description }}</p>
               </router-link>
-              <mov-conta :conta="acount"/>
               <p>Data de criação: {{ acount.createdAt }}</p>
             </div>
         </div>
       </ul>
-      <total-saldo :acount="acounts" />
+      <total-saldo/>
     </div>
 </template>
 
