@@ -3,14 +3,12 @@
         <form @submit.prevent="authenticate()">
 
             <div>
-                <label for="login">Login:</label>
-                <input name="login" @input="user.login = $event.target.value" />
+                <input name="login" id="input-login" placeholder="login" @input="user.login = $event.target.value" />
             </div>
             <div>
-                <label for="password">Senha:</label>
-                <input type="password" name="password" @input="user.password = $event.target.value"/>
+                <input type="password" id="input-password" placeholder="senha" name="password" @input="user.password = $event.target.value"/>
             </div>
-            <button>Login</button>
+            <button class="btn btn-success" id="btn-login" >Login</button>
 
         </form>
             <div>
@@ -63,9 +61,17 @@ export default {
 </script>
 
 <style scoped>
-
+    .container{
+        text-align: center;
+    }
     .erro{
-        color: red;
+        color: rgb(207, 62, 62);
+    }
+    #btn-login{
+        margin: 10px;
+    }
+    #input-login{
+        margin: 5px;
     }
 
 </style>

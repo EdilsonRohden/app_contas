@@ -1,20 +1,17 @@
 <template>
-    <div>
-        <form @submit.prevent="cadastrar()">
+    <div class="container">
+        <form class="frm-cadastro" @submit.prevent="cadastrar()">
             <div>
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" v-model="user.nome"/>
+                <input placeholder="Nome" type="text" name="nome" id="nome" v-model="user.nome"/>
             </div>
             <div>
-                <label for="login">Login:</label>
-                <input type="text" name="login" id="login" v-model="user.login"/>
+                <input placeholder="login" type="text" name="login" id="login" v-model="user.login"/>
             </div>
             <div>
-                <label for="password">Senha:</label>
-                <input type="password" name="password" id="password" v-model="user.password"/>
+                <input placeholder="password" type="password" name="password" id="password" v-model="user.password"/>
             </div>
 
-            <button>Salvar</button>
+            <button class="btn btn-success" id="btn-cadastrar" >Cadastrar</button>
         </form>
 
     </div>
@@ -58,5 +55,14 @@ export default {
 </script>
 
 <style scoped>
-
+    .container{
+        margin-top: 15px;
+        text-align: center;
+    }
+    input{
+        margin-top: 5px;
+    }
+    #btn-cadastrar{
+        margin: 5px;
+    }
 </style>

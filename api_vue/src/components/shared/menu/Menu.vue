@@ -1,19 +1,12 @@
 <template>
     <div class="lista">
-
+        <button class="btn btn-danger" style="margin: 8px;" @click="logoff" >logoff</button>
     </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            token: ''
-        }
-    },
-    updated() {
-        this.token = localStorage.getItem('token');
-    },
+
     props: {
 
         routes:{
@@ -24,6 +17,12 @@ export default {
         }
 
     },
+    methods:{
+        logoff(){
+            localStorage.removeItem('token');
+            this.$router.push('/');
+        }
+    }
 
 }
 </script>
@@ -33,12 +32,10 @@ export default {
         list-style: none;
         background-color: #24292e;
         width: 100%;
-        height: 40px;
-        margin-right: 20px;
+        height: 50px;
+        text-align: right;
     }
-    .lista-item{
-        display: inline-block;
+    .logoff{
         margin: 10px;
-        
     }
 </style>
