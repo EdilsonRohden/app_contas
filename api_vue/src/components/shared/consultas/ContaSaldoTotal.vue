@@ -1,8 +1,11 @@
 <template>
-    <div class="container" >
-        <p>Total Crédito: {{ result.totalCredito }} R$</p>
-        <p>Total Débito: {{ result.totalDebito }} R$</p>
-        <p>Saldo Total: {{ result.totalSaldo }} R$</p>
+    <div class="card w-50">
+      <div class="card-body">
+        <h5 class="card-title">Saldo Total</h5>
+          <p class="card-text">Total Crédito: {{ result.totalCredito }} R$</p>
+          <p class="card-text">Total Débito: {{ result.totalDebito }} R$</p>
+          <p class="card-text">Saldo Total: {{ result.totalSaldo }} R$</p>
+      </div>
     </div>
 </template>
 
