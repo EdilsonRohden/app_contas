@@ -1,9 +1,8 @@
 <template>
-    <div>
-        <label for="description">Descrição</label>
-        <input type="text" name="description" id="description" v-model="acount.description" />
+    <div class="container">
+        <input class="input-descricao" type="text" name="description" id="description" placeholder="Descrição da Conta" v-model="acount.description" />
         <div>
-          <button @click="cadastraConta()" >Cadastrar</button>
+          <button class="btn btn-success" @click="cadastraConta()" >Cadastrar</button>
         </div>
     </div>
 </template>
@@ -37,5 +36,11 @@ export default {
 </script>
 
 <style scoped>
+  .container {
+    text-align: center;
+  }
 
+  .input-descricao {
+    margin: 10px;
+  }
 </style>

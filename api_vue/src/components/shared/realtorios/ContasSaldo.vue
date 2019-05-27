@@ -45,9 +45,9 @@ export default {
                 conta.saldo = 0;
                 conta.moves.forEach(mov => {
                     if( mov.tipo == 'D' ){
-                        conta.saldo = conta.saldo + parseInt(mov.value);
-                    }else{
                         conta.saldo = conta.saldo - parseInt(mov.value);
+                    }else{
+                        conta.saldo = conta.saldo + parseInt(mov.value);
                     }
                 });
                 this.result.push(conta);

@@ -1,24 +1,22 @@
 <template>
-    <div>
-        <div>
+    <div class="container">
+        <div class="relatorio">
           <consulta-conta :id="this.$route.params.id" />
         </div>
-        <form @submit.prevent="">
-            <div>
-                <label for="description">Descrição</label>
-                <input type="text" name="description" id="description" v-model="mov.description" />
+        <form @submit.prevent="" class="formulario" >
+            <div class="elemento">
+                <input type="text" placeholder="Descrição do movimento" v-model="mov.description" />
             </div>
-            <div>
+            <div class="elemento">
                 <select name="tipo" id="tipo" v-model="mov.tipo" >
                     <option value="D" selected>Débito</option>
                     <option value="C">Crédito</option>
                 </select>
             </div>
-            <div>
-                <label for="value">Valor</label>
-                <input type="number" name="value" id="value" v-model="mov.value" />
+            <div class="elemento">
+                <input placeholder="valor" type="number" v-model="mov.value" />
             </div>
-            <div>
+            <div class="elemento">
                 <button @click="salvar()" >Salvar</button>
             </div>
         </form>
@@ -74,5 +72,20 @@ export default {
 </script>
 
 <style scoped>
+  .formulario {
+    margin-top: 20px;
+    border: solid rgb(106, 248, 106);
+  }
+
+  .container {
+  }
+
+  .relatorio {
+    margin-top: 10px;
+    border: solid rgb(106, 248, 106);
+  }
+  .elemento {
+    margin: 10px;
+  }
 
 </style>

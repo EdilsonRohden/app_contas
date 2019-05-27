@@ -20,6 +20,7 @@ export default {
     methods:{
         logoff(){
             localStorage.removeItem('token');
+            localStorage.removeItem('user_data');
             this.$router.push('/');
         }
     }

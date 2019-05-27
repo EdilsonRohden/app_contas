@@ -48,7 +48,7 @@ export default {
             acounts.forEach(acount => {
                 this.calcula(acount);
             });
-            this.result.totalSaldo = this.result.totalDebito - this.result.totalCredito;
+            this.result.totalSaldo = this.result.totalCredito - this.result.totalDebito;
         }
     },
 

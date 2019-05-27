@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <table>
+  <div class="container">
+    <table class="tabela">
       <tr>
         <th>Descrição</th>
         <th>Tipo</th>
@@ -12,7 +12,7 @@
         <td>{{ mov.value }}</td>
       </tr>
     </table>
-    <div v-show="this.acount">
+    <div class="saldo" v-show="this.acount.moves">
       <p>Total Crédito: {{ result.tc }}</p>
       <p>Total Débito: {{ result.td }}</p>
       <p>Saldo: {{ result.ts }}</p>
@@ -67,7 +67,7 @@ export default {
             this.result.tc = this.result.tc + parseInt(mov.value);
           }
         });
-        this.result.ts = this.result.td - this.result.tc;
+        this.result.ts = this.result.tc - this.result.td;
       });
     }
   }
@@ -75,5 +75,25 @@ export default {
 </script>
 
 <style scoped>
+  .container {
+    margin-top: 20px;
+  }
+  .tabela {
+    text-align: center;
+  }
 
+  tr {
+    margin: 20px;
+  }
+  th {
+    border: solid rgb(111, 196, 104);
+  }
+  td {
+    border: solid rgb(111, 196, 104);
+  }
+  .saldo {
+    float: left;
+    text-align: center;
+    margin: 10px;
+  }
 </style>

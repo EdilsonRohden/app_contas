@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 	
 	try {
 
-		const acounts = await Acount.find().populate(['user', 'moves']);
+		const acounts = await Acount.find({ user: req.userId }).populate(['user', 'moves']);
 		
 		return res.send({ acounts });
 
