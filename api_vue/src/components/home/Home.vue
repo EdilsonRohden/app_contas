@@ -20,8 +20,10 @@
       <div class="saldo-total">
         <total-saldo/>
       </div>
-      <router-link to="/relatorios/contaMovimetacao"><button>ContaMovimentacao</button></router-link>
-      <router-link to="/relatorios/ContasSaldo">Conta Saldo</router-link>
+      <div class="relatorios" >
+        <router-link to="/relatorios/contaMovimetacao"><button class="btn">ContaMovimentacao</button></router-link>
+        <router-link to="/relatorios/ContasSaldo"><button class="btn" >Conta Saldo</button></router-link>
+      </div>
     </div>
 </template>
 
@@ -84,5 +86,8 @@ export default {
   }
   .add-conta {
     margin: 10px;
+  }
+  .relatorios {
+    margin-top: 20px;
   }
 </style>

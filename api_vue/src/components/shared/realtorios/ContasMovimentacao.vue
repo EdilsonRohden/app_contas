@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <table>
+        <table class="table" >
             <tr>
                 <th>Descrição da conta</th>
                 <th>Saldo</th>
@@ -55,5 +55,7 @@ export default {
 </script>
 
 <style scoped>
+  .container{
 
+  }
 </style>

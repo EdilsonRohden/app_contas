@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="container">
 
-        <table v-for="conta in acounts" :key="conta._id">
-            <thead>
+        <table class="table" v-for="conta in acounts" :key="conta._id">
+            <thead class="descricao">
                 <tr>Descrição da Conta: {{ conta.description }}</tr>
             </thead>
             <tr>
@@ -68,19 +68,42 @@ export default {
                 }
             });
 
-            acount.st = acount.td - acount.tc;
+            acount.st = acount.tc - acount.td;
             return acount;
         },
         calculaTodos(acounts){
             acounts.forEach(acount => {
                 this.acounts.push(this.calcula(acount));
             });
-            this.result.totalSaldo = this.result.totalDebito - this.result.totalCredito;
+            this.result.totalSaldo = this.result.totalCredito - this.result.totalDebito;
         }
     },
 }
 </script>
 
 <style scoped>
-
+  .container{
+    text-align: center;
+  }
+  th{
+    margin: 5px;
+    border: solid rgb(106, 248, 106);
+  }
+  tr{
+    text-align: left;
+  }
+  td{
+    margin: 5px;
+    border: solid rgb(106, 248, 106);
+  }
+  p{
+    text-align: left;
+    margin: 10px;
+  }
+  .table{
+    margin-top: 20px;
+  }
+  .descricao{
+    margin-bottom: 20px;
+  }
 </style>

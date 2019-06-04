@@ -1,16 +1,18 @@
 <template>
-    <div>
-        <table>
-            <tr>
-                <th>Descrição</th>
-                <th>Saldo</th>                
-            </tr>
-            <tr v-for="conta in result" :key="conta._id">
-                <td>{{ conta.description }}</td>
-                <td>{{ conta.saldo }}</td>
-            </tr>
-        </table>
-        <p>Saldo: {{ saldoTotal }}</p>
+    <div class="body">
+      <div class="container">
+          <table class="table">
+              <tr>
+                  <th>Descrição</th>
+                  <th>Saldo</th>
+              </tr>
+              <tr v-for="conta in result" :key="conta._id">
+                  <td>{{ conta.description }}</td>
+                  <td>{{ conta.saldo }}</td>
+              </tr>
+          </table>
+          <p>Saldo: {{ saldoTotal }}</p>
+      </div>
     </div>
 </template>
 
@@ -31,12 +33,12 @@ export default {
       this.token = localStorage.getItem('token');
       this.$http.get('acounts/', { headers: { 'Authorization': this.token } })
         .then(
-          function(res){ 
+          function(res){
             this.calculaContasSaldo(res.body.acounts);
             this.calculaSaldo();
           },
           function(err){ console.log(err) }
-        );        
+        );
     },
 
     methods:{
@@ -59,10 +61,30 @@ export default {
             });
         }
     }
-    
+
 }
 </script>
 
 <style scoped>
-    
+  .container {
+    margin-top: 20px;
+    border: solid rgb(106, 248, 106);
+  }
+  .table{
+    margin-top: 10px;
+  }
+  tr{
+    margin: 5px;
+  }
+  p{
+    text-align: center;
+  }
+  th{
+    margin: 5px;
+    border: solid rgb(106, 248, 106);
+  }
+  td{
+    margin: 5px;
+    border: solid rgb(106, 248, 106);
+  }
 </style>

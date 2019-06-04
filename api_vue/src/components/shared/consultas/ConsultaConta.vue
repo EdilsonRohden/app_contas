@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <table class="tabela">
+    <table class="table">
       <tr>
         <th>Descrição</th>
         <th>Tipo</th>
@@ -78,8 +78,9 @@ export default {
   .container {
     margin-top: 20px;
   }
-  .tabela {
+  .table {
     text-align: center;
+    width: 97%;
   }
 
   tr {
