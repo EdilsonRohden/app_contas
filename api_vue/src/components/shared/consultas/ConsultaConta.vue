@@ -1,21 +1,41 @@
 <template>
   <div class="container">
-    <table class="table">
-      <tr>
-        <th>Descrição</th>
-        <th>Tipo</th>
-        <th>Valor</th>
-      </tr>
-      <tr v-for="mov in acount.moves" :key="mov._id">
-        <td>{{ mov.description }}</td>
-        <td>{{ mov.tipo }}</td>
-        <td>{{ mov.value }}</td>
-      </tr>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Descrição <span class="glyphicon glyphicon-chevron-up" ></span></th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr scope="row" v-for="mov in acount.moves" :key="mov._id">
+          <td>{{ mov.description }}</td>
+          <td>{{ mov.tipo }}</td>
+          <td>{{ mov.value }}</td>
+        </tr>
+      </tbody>
     </table>
-    <div class="saldo" v-show="this.acount.moves">
-      <p>Total Crédito: {{ result.tc }}</p>
-      <p>Total Débito: {{ result.td }}</p>
-      <p>Saldo: {{ result.ts }}</p>
+    <div class="panel panel-default" v-show="this.acount.moves">
+      <div class="panel-heading">Totalizador da Conta</div>
+      <div class="panel-body">
+        <table class="table table-bordered">
+          <tbody>
+            <tr scope="row">
+              <td>Total Crédito:</td>
+              <td>{{ result.tc }}</td>
+            </tr>
+            <tr scope="row">
+              <td>Total Débito</td>
+              <td>{{ result.td }}</td>
+            </tr>
+            <tr scope="row">
+              <td>Saldo</td>
+              <td>{{ result.ts }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -77,24 +97,5 @@ export default {
 <style scoped>
   .container {
     margin-top: 20px;
-  }
-  .table {
-    text-align: center;
-    width: 97%;
-  }
-
-  tr {
-    margin: 20px;
-  }
-  th {
-    border: solid rgb(111, 196, 104);
-  }
-  td {
-    border: solid rgb(111, 196, 104);
-  }
-  .saldo {
-    float: left;
-    text-align: center;
-    margin: 10px;
   }
 </style>

@@ -3,11 +3,16 @@
       <div class="contas">
         <div class="card w-100">
           <ul class="card-body">
-            <div v-for='acount in acounts' :key="acount._id" class="iten-conta" >
-              <router-link :to="{ name: 'cadastroMovimento', params : { id: acount._id } }">
-                <p class="card-text">{{ acount.description }}</p>
-              </router-link>
-              <p class="card-text">Data de criação: {{ acount.createdAt }}</p>
+            <div v-for='acount in acounts' :key="acount._id" class="panel panel-default">
+              <div class="panel-heading">
+                <router-link :to="{ name: 'cadastroMovimento', params : { id: acount._id } }">
+                  <span class="glyphicon glyphicon-piggy-bank"></span>
+                </router-link>
+              </div>
+              <div class="panel-body">
+                  <p class="card-text">{{ acount.description }}</p>
+                <p class="card-text">Data de criação: {{ acount.createdAt }}</p>
+              </div>
             </div>
 
             <div class="add-conta" >
@@ -79,7 +84,6 @@ export default {
   }
   .iten-conta {
     margin-top: 5px;
-    border: solid rgb(97, 180, 248);
   }
   .card-body {
     padding-left: 0px;

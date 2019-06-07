@@ -17,7 +17,7 @@
                 <input placeholder="valor" type="number" v-model="mov.value" />
             </div>
             <div class="elemento">
-                <button @click="salvar()" >Salvar</button>
+                <button @click="salvar()" ><span class="glyphicon glyphicon-plus"></span></button>
             </div>
         </form>
     </div>
@@ -74,7 +74,6 @@ export default {
 <style scoped>
   .formulario {
     margin-top: 20px;
-    border: solid rgb(106, 248, 106);
   }
 
   .container {
@@ -82,7 +81,6 @@ export default {
 
   .relatorio {
     margin-top: 10px;
-    border: solid rgb(106, 248, 106);
   }
   .elemento {
     margin: 10px;

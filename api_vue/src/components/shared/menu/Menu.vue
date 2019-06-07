@@ -1,6 +1,13 @@
 <template>
     <div class="lista">
-        <button class="btn btn-danger" style="margin: 8px;" @click="logoff" >logoff</button>
+        <ul class="nav nav-tabs">
+          <li role="presentation"><router-link :to="{ name: 'home' }">Home</router-link></li>
+          <li role="presentation"><a href="#">Profile</a></li>
+          <li role="presentation"><a href="#">Messages</a></li>
+          <li>
+            <button class="btn btn-danger" @click="logoff" >logoff</button>
+          </li>
+        </ul>
     </div>
 </template>
 
@@ -30,11 +37,7 @@ export default {
 
 <style scoped>
     .lista{
-        list-style: none;
         background-color: #24292e;
-        width: 100%;
-        height: 50px;
-        text-align: right;
     }
     .logoff{
         margin: 10px;
