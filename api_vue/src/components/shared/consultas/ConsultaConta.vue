@@ -3,12 +3,12 @@
     <table class="table table-bordered">
       <thead class="thead-light">
         <tr>
-          <th scope="col">Descrição <span class="glyphicon glyphicon-chevron-up" ></span></th>
+          <th @click="no_exibe" scope="col">Descrição <span class="glyphicon glyphicon-collapse-down" ></span></th>
           <th scope="col">Tipo</th>
           <th scope="col">Valor</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody v-show="mostraTabela">
         <tr scope="row" v-for="mov in acount.moves" :key="mov._id">
           <td>{{ mov.description }}</td>
           <td>{{ mov.tipo }}</td>
@@ -58,7 +58,8 @@ export default {
         td: 0,
         tc: 0,
         ts: 0
-      }
+      },
+      mostraTabela: false
     }
   },
   created(){
@@ -89,6 +90,9 @@ export default {
         });
         this.result.ts = this.result.tc - this.result.td;
       });
+    },
+    no_exibe(){
+      this.mostraTabela = !this.mostraTabela;
     }
   }
 }

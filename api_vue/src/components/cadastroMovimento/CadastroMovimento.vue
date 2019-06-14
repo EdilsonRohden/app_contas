@@ -3,23 +3,30 @@
         <div class="relatorio">
           <consulta-conta :id="this.$route.params.id" />
         </div>
-        <form @submit.prevent="" class="formulario" >
-            <div class="elemento">
-                <input type="text" placeholder="Descrição do movimento" v-model="mov.description" />
-            </div>
-            <div class="elemento">
-                <select name="tipo" id="tipo" v-model="mov.tipo" >
-                    <option value="D" selected>Débito</option>
-                    <option value="C">Crédito</option>
-                </select>
-            </div>
-            <div class="elemento">
-                <input placeholder="valor" type="number" v-model="mov.value" />
-            </div>
-            <div class="elemento">
-                <button @click="salvar()" ><span class="glyphicon glyphicon-plus"></span></button>
-            </div>
-        </form>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p><strong>Cadastrar Novo Movimento</strong></p>
+          </div>
+          <div class="panel-body">
+            <form @submit.prevent="" class="formulario" >
+                <div class="elemento">
+                    <input type="text" placeholder="Descrição do movimento" v-model="mov.description" />
+                </div>
+                <div class="elemento">
+                    <select name="tipo" id="tipo" v-model="mov.tipo" >
+                        <option value="D" selected>Débito</option>
+                        <option value="C">Crédito</option>
+                    </select>
+                </div>
+                <div class="elemento">
+                    <input placeholder="valor" type="number" v-model="mov.value" />
+                </div>
+                <div class="elemento">
+                    <button @click="salvar()" ><span class="glyphicon glyphicon-plus"></span></button>
+                </div>
+            </form>
+          </div>
+        </div>
     </div>
 </template>
 

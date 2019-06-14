@@ -1,17 +1,28 @@
 <template>
     <div class="body">
       <div class="container">
-          <table class="table">
-              <tr>
-                  <th>Descrição</th>
-                  <th>Saldo</th>
-              </tr>
-              <tr v-for="conta in result" :key="conta._id">
-                  <td>{{ conta.description }}</td>
-                  <td>{{ conta.saldo }}</td>
-              </tr>
-          </table>
-          <p>Saldo: {{ saldoTotal }}</p>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>Saldo Total Por Contas</strong>
+          </div>
+          <div class="panel-body">
+            <table class="table table-bordered">
+              <thead class="table-light">
+                <tr>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Saldo Por Conta</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr scope="row" v-for="conta in result" :key="conta._id">
+                    <td>{{ conta.description }}</td>
+                    <td>{{ conta.saldo }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong>Saldo Total da Carteira:</strong> {{ saldoTotal }}</p>          
+          </div>
+        </div>
       </div>
     </div>
 </template>
@@ -68,23 +79,7 @@ export default {
 <style scoped>
   .container {
     margin-top: 20px;
-    border: solid rgb(106, 248, 106);
-  }
-  .table{
-    margin-top: 10px;
-  }
-  tr{
-    margin: 5px;
-  }
-  p{
     text-align: center;
   }
-  th{
-    margin: 5px;
-    border: solid rgb(106, 248, 106);
-  }
-  td{
-    margin: 5px;
-    border: solid rgb(106, 248, 106);
-  }
+
 </style>

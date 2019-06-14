@@ -12,8 +12,9 @@
             </div>
 
             <button class="btn btn-success" id="btn-cadastrar" >Cadastrar</button>
+            
         </form>
-
+        <router-link to="/">Já tenho uma conta.</router-link>
     </div>
 </template>
 <script>
@@ -56,7 +57,6 @@ export default {
 
 <style scoped>
     .container{
-        margin-top: 15px;
         text-align: center;
     }
     input{
@@ -64,5 +64,6 @@ export default {
     }
     #btn-cadastrar{
         margin: 5px;
+        width: 19%;
     }
 </style>

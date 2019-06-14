@@ -1,30 +1,34 @@
 <template>
     <div class="container">
 
-        <table class="table" v-for="conta in acounts" :key="conta._id">
-            <thead class="descricao">
-                <tr>Descrição da Conta: {{ conta.description }}</tr>
+        <table class="table table-bordered" v-for="conta in acounts" :key="conta._id">
+            <thead class="table-light">
+                <tr> <strong> {{ conta.description }} </strong></tr>
             </thead>
-            <tr>
-                <th>Descriçao</th>
-                <th>Tipo</th>
-                <th>Valor</th>
-            </tr>
-            <tr v-for="mov in conta.moves" :key="mov.description">
-                <td>{{ mov.description }}</td>
-                <td>{{ mov.tipo }}</td>
-                <td>{{ mov.value }}</td>
-            </tr>
-            <p>Total Crédito {{ conta.tc }}</p>
-            <p>Total Débito {{ conta.td }}</p>
-            <p>Saldo: {{ conta.st }}</p>
+            <tbody>
+              <tr scope="row">
+                  <th>Descriçao</th>
+                  <th>Tipo</th>
+                  <th>Valor</th>
+              </tr>
+              <tr scope="row"  v-for="mov in conta.moves" :key="mov.description">
+                  <td>{{ mov.description }}</td>
+                  <td>{{ mov.tipo }}</td>
+                  <td>{{ mov.value }}</td>
+              </tr>
+              <p><strong>Total Crédito:</strong> {{ conta.tc }}</p>
+              <p><strong>Total Debito:</strong> {{ conta.td }}</p>
+              <p><strong>Total Saldo:</strong> {{ conta.st }}</p>
+            </tbody>
         </table>
         <conta-saldo-total />
     </div>
 </template>
 
 <script>
-import ContaSaldoTotal from './ContaSaldoTotal';
+
+  import ContaSaldoTotal from './ContaSaldoTotal';
+
 export default {
 
     components:{
@@ -84,24 +88,11 @@ export default {
 <style scoped>
   .container{
     text-align: center;
-  }
-  th{
-    margin: 5px;
-    border: solid rgb(106, 248, 106);
-  }
-  tr{
-    text-align: left;
-  }
-  td{
-    margin: 5px;
-    border: solid rgb(106, 248, 106);
+    margin-top: 20px;
   }
   p{
     text-align: left;
     margin: 10px;
-  }
-  .table{
-    margin-top: 20px;
   }
   .descricao{
     margin-bottom: 20px;

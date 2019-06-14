@@ -1,15 +1,21 @@
 <template>
     <div class="container">
-        <table class="table" >
-            <tr>
-                <th>Descrição da conta</th>
-                <th>Saldo</th>
-            </tr>
-            <tr v-for="res in result" :key="res.description">
-                <td>{{ res.description }}</td>
-                <td>{{ res.value }}}</td>
-            </tr>
+        
+        <table class="table table-bordered" >
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Descrição da conta</th>
+                    <th scope="col">Saldo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row" v-for="res in result" :key="res.description">
+                    <td>{{ res.description }}</td>
+                    <td>{{ res.value }}}</td>
+                </tr>
+            </tbody>
         </table>
+
         <p>Saldo: {{ totalsaldo }}</p>
     </div>
 </template>
@@ -55,7 +61,5 @@ export default {
 </script>
 
 <style scoped>
-  .container{
 
-  }
 </style>

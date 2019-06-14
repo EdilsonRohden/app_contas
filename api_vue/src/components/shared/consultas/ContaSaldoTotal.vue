@@ -1,7 +1,7 @@
 <template>
     <div>
     <div class="panel panel-default">
-      <div class="panel-heading">Saldo Total</div>
+      <div class="panel-heading"><strong>Saldo Total</strong></div>
       <div class="panel-body">
         <table class="table table-bordered">
           <tbody>

@@ -68,7 +68,8 @@ export default {
         color: rgb(207, 62, 62);
     }
     #btn-login{
-        margin: 10px;
+        margin: 5px;
+        width: 19%;
     }
     #input-login{
         margin: 5px;

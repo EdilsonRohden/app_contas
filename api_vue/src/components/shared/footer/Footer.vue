@@ -1,17 +1,15 @@
 <template>
-    <div>
-        <footer class="footer">
-            
-            <h1>Carteiras Compasso/UNOESC®</h1>
-            <h2 class="nome">Powered by Edilson Rohden.</h2>
-            <h2 class="fac">
-                Dúvidas ou bugs clique
-                <a class="suporte" href="https://github.com/EdilsonRohden/app_contas/issues">aqui</a>
-                .
-            </h2>
-            
-        </footer>
-    </div>
+    <footer class="footer">
+        
+        <h1>Carteiras Compasso/UNOESC®</h1>
+        <h2 class="nome">Edilson Rohden</h2>
+        <h2 class="fac">
+            Dúvidas ou bugs clique
+            <a class="suporte" href="https://github.com/EdilsonRohden/app_contas/issues">aqui</a>
+            .
+        </h2>
+        
+    </footer>
 </template>
 <script>
 export default {
@@ -24,11 +22,11 @@ export default {
 </script>
 <style scoped>
     h1{
+        margin-top: 20px;
         font-size: 20px;
     }
     .footer{
         margin: auto;
-        border: 1px solid black;
         display: block;
         position: fixed;
         left: 0;

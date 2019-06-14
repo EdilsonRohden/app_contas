@@ -45,18 +45,16 @@ export default {
   created(){
     this.getContas();
   },
+
   methods: {
     getContas(){
-      this.getToken()
+      this.token = localStorage.getItem('token');
       this.$http.get('acounts/', { headers: { 'Authorization': this.token } })
         .then(
           function(res){ this.acounts = res.body.acounts;
           },
           function(err){ console.log(err) }
         );
-    },
-    getToken(){
-      this.token = localStorage.getItem('token');
     }
   },
 
