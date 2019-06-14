@@ -2,11 +2,7 @@
     <div class="lista">
         <ul class="nav nav-tabs">
           <li role="presentation"><router-link :to="{ name: 'home' }">Home</router-link></li>
-          <li role="presentation"><a href="#">Profile</a></li>
-          <li role="presentation"><a href="#">Messages</a></li>
-          <li>
-            <button class="btn btn-danger" @click="logoff" >logoff</button>
-          </li>
+          <li><button class="btn btn-danger" @click="logoff" >logoff</button></li>
         </ul>
     </div>
 </template>

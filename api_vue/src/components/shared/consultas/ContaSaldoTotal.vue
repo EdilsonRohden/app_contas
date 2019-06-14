@@ -1,13 +1,26 @@
 <template>
     <div>
-      <div class="card w-50">
-        <div class="card-body">
-          <h5 class="card-title">Saldo Total</h5>
-            <p class="card-text">Total Crédito: {{ result.totalCredito }} R$</p>
-            <p class="card-text">Total Débito: {{ result.totalDebito }} R$</p>
-            <p class="card-text">Saldo Total: {{ result.totalSaldo }} R$</p>
-        </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Saldo Total</div>
+      <div class="panel-body">
+        <table class="table table-bordered">
+          <tbody>
+            <tr scope="row">
+              <td>Total Crédito</td>
+              <td>{{ result.totalCredito }}</td>
+            </tr>
+            <tr scope="row">
+              <td>Total Débito</td>
+              <td>{{ result.totalDebito }}</td>
+            </tr>
+            <tr scope="row">
+              <td>Saldo Total</td>
+              <td>{{ result.totalSaldo }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </div>
     </div>
 </template>
 

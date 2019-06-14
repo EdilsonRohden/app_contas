@@ -6,7 +6,10 @@
             <div v-for='acount in acounts' :key="acount._id" class="panel panel-default">
               <div class="panel-heading">
                 <router-link :to="{ name: 'cadastroMovimento', params : { id: acount._id } }">
-                  <span class="glyphicon glyphicon-piggy-bank"></span>
+                  <div>
+                    <span class="glyphicon glyphicon-piggy-bank"></span>
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </div>
                 </router-link>
               </div>
               <div class="panel-body">
@@ -75,9 +78,6 @@ export default {
 <style scoped>
   .container{
     text-align: center;
-  }
-  .saldo-total {
-    border: solid rgb(106, 248, 106);
   }
   .contas {
     margin-top: 20px;
