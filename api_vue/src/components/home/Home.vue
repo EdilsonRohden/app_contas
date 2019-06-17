@@ -3,7 +3,7 @@
       <div class="contas">
         <div class="card w-100">
           <ul class="card-body">
-            <div v-for='acount in acounts' :key="acount._id" class="panel panel-default">
+            <div v-for='acount in getData' :key="acount._id" class="panel panel-default">
               <div class="panel-heading">
                 <router-link :to="{ name: 'cadastroMovimento', params : { id: acount._id } }">
                   <div>
@@ -46,14 +46,23 @@ export default {
     this.getContas();
   },
 
+  computed: {
+    getData(){
+      return this.acounts;
+    }
+  },
+
   methods: {
     getContas(){
-      this.token = localStorage.getItem('token');
-      this.$http.get('acounts/', { headers: { 'Authorization': this.token } })
-        .then(
-          function(res){ this.acounts = res.body.acounts;
-          },
-          function(err){ console.log(err) }
+      localStorage.getItem('token').then(
+        function (res){
+          this.$http.get('acounts/', { headers: { 'Authorization': res } })
+            .then(
+              function(resp){ this.acounts = resp.body.acounts;
+              },
+              function(err){ console.log(err) }
+          )}, 
+          erro => console.log(erro)
         );
     }
   },
@@ -65,7 +74,7 @@ export default {
 
   data(){
     return{
-      token: '',
+      token: null,
       acounts: []
     }
   }

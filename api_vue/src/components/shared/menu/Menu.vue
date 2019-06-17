@@ -13,8 +13,8 @@ export default {
     data(){
         return{
             token: '',
-            home_data: false,
-            logoff_data: false
+            home_data: true,
+            logoff_data: true
         }
     },
 
